@@ -21,7 +21,7 @@ client.on("ready", () => {
 
 
 client.on("message", message => {
-    if (message.mentions.has(client.user)) {
+    if (message.mentions.has(client.user) && !message.mentions.everyone) {
         const msgArray = message.content.split(" ")
         msgArray.shift()
 
@@ -59,7 +59,7 @@ client.on("message", message => {
 
 
 function getUnixTime() {
-    return Math.round((Date.now() / 1000))
+    return Math.round(Date.now() / 1000)
 }
 
 
